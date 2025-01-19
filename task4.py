@@ -3,3 +3,15 @@
 # Слова во всех предложениях должны быть приведены к верхнему регистру.
 # Между словами вместо пробела ставится символ "_".
 # После записи откройте этот файл, считайте содержимое и выведите его на экран.
+n = int(input('Введите количество предложений: '))
+print('Введите предложения, каждое с новой строки')
+with open('task4.txt', 'w', encoding='utf-8') as f:
+    for _ in range(n):
+        sentence = input()
+        sentence = sentence.upper()
+        sentence = sentence.replace(' ', '_')
+        f.write(sentence)
+        f.write('\n')
+with open('task4.txt', 'r', encoding='utf-8') as f:
+    text = f.read()
+    print(text)
